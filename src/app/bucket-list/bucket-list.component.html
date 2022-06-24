@@ -1,0 +1,25 @@
+<div fxFill fxLayout="row" class="white-bg white-color round" fxLayoutAlign="center stretch">
+  <div fxFlex="95" fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="1em">
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="margin-top-1em">
+      <button [ngClass]="[(item.state === currentState) ? 'red-bg' : '']" (click)="changeState(item.state)" *ngFor="let item of states" mat-raised-button class="rounded-button white-color">{{ item.state }}</button>
+      <span class="material-icons red-color pointer" (click)="openDialog({heading: 'Add New'})">add_circle</span>
+    </div>
+    <div *ngIf="bucketListItems.length === 0" fxLayout="row" fxLayoutAlign="center center">
+      <span class="red-color bold">No items yet, click on the + icon to add!</span>
+    </div>
+    <div *ngFor="let item of bucketListItems" class="bucket-item-bg round padding-1rem" fxLayout="row" fxLayoutAlign="space-between center">
+      <div fxFlex="60" fxLayout="column" fxLayoutAlign="start stretch">
+        <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap=".5em">
+          <mat-checkbox name="isAchieved" [(ngModel)]="item.isAchieved" class="custom-checkbox"><span class="white-color bold">{{ item.item }}</span></mat-checkbox>
+        </div>
+      </div>
+      <div fxFlex="20" fxLayout="column" fxLayoutAlign="start stretch">
+        <div fxLayout="row" fxLayoutAlign="end" fxLayoutGap=".3em">
+          <span class="material-icons black-color pointer" (click)="viewItem(item)">visibility</span>
+          <span class="material-icons black-color pointer" (click)="editItem(item)">edit</span>
+          <span class="material-icons black-color pointer" (click)="deleteItem(item.$key)">delete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div style="background-color: black;" fxFill fxLayout="column" fxLayoutGap="1em">
+  <!-- Toolbar -->
+  <div fxLayout="row" fxFlex="50px" class="white-bg" fxLayoutAlign="start stretch">
+    <div fxFill fxLayout="column" fxFlex="100">
+      <app-toolbar></app-toolbar>
+    </div>
+  </div>
+
+  <!-- Counter -->
+  <div fxLayout="row" fxFlex="70px" fxLayoutAlign="center stretch" class="round">
+    <div fxFill fxLayout="column" fxFlex="90">
+      <app-counter></app-counter>
+    </div>
+  </div>
+
+  <!-- List Tracker -->
+  <div *ngIf="false" fxLayout="row" fxFlex="70px" fxLayoutAlign="center stretch" class="round">
+    <div fxFill fxLayout="column" fxFlex="90">
+      <app-list-tracker></app-list-tracker>
+    </div>
+  </div>
+
+    <!-- Bucket List -->
+  <div fxLayout="row" fxFlex="75" fxLayoutAlign="center stretch">
+    <div fxFill fxLayout="column" fxFlex="90">
+      <app-bucket-list></app-bucket-list>
+    </div>
+  </div>
+
+    <!-- Toolbar -->
+    <div *ngIf="false" fxLayout="row" fxFlex="50px" class="white-bg" fxLayoutAlign="start stretch">
+      <div fxFill fxLayout="column" fxFlex="100">
+        <app-toolbar></app-toolbar>
+      </div>
+    </div>
+</div>

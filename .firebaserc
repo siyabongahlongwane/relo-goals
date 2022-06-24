@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "karabo-siya": {
+      "hosting": {
+        "relationship-bucketlist": [
+          "karabo-siya"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "karabo-siya"
+  }
+}

@@ -1,0 +1,50 @@
+<div fxFill fxLayout="row" class="white-bg round">
+  <div fxFlex="100" fxLayout="column" fxLayoutAlign="start stretch" [fxLayoutGap]="(data.isView) ? '1.2em' : ''">
+    <h2 class="red-color remove-margin">{{ data.heading }}</h2>
+    <div *ngIf="!data?.isView" fxLayoutAlign="start stretch">
+      <form fxFill #bucketListForm="ngForm" fxLayout="column" fxLayoutAlign="start stretch" class="margin-top-1em">
+        <mat-form-field>
+          <mat-label>Your Name</mat-label>
+          <input [(ngModel)]="bucketListItem.name" name="name" required type="text" placeholder="Your Name" matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Bucket List Item</mat-label>
+          <input [(ngModel)]="bucketListItem.item" name="item" required type="text" placeholder="Bucket List Item"
+            matInput>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Description</mat-label>
+          <textarea [(ngModel)]="bucketListItem.description" required type="text" name="description" rows="3"
+            placeholder="Description" matInput></textarea>
+        </mat-form-field>
+        <mat-checkbox [(ngModel)]="bucketListItem.isAchieved" name="isAchieved" class="custom-checkbox"><span
+            class="red-color bold">Achieved</span>
+        </mat-checkbox>
+        <div fxLayout="row" class="white-bg round" fxLayoutAlign="end" fxLayoutGap=".5em"
+        class="margin-top-1em">
+        <button mat-dialog-close class="rounded-button white-color black-bg" mat-raised-button>Cancel</button>
+        <button [mat-dialog-close]="bucketListForm.value" [disabled]="!bucketListForm.valid"
+          class="rounded-button white-color red-bg" mat-raised-button>Save</button>
+      </div>
+      </form>
+    </div>
+
+    <div fxLayout="column" *ngIf="data.isView" class="margin-top-1em">
+      <span class="black-color">
+        <span><b class="red-color">Bucket List Item</b> : {{ data.item }}</span>
+      </span>
+      <span class="black-color">
+        <span><b class="red-color">Description</b> : {{ data.description }}</span>
+      </span>
+      <span class="black-color">
+        <span><b class="red-color">Made by</b> : {{ data.name }}</span>
+      </span>
+      <span class="black-color">
+        <span><b class="red-color">Achieved</b> : {{ (data.isAchieved) ? 'Yes' : 'No' }}</span>
+      </span>
+      <div fxLayout="row" fxLayoutAlign="stretch" class="margin-top-1em">
+        <button fxFill mat-dialog-close class="rounded-button white-color red-bg" mat-raised-button>Okay</button>
+      </div>
+    </div>
+
+  </div>

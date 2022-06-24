@@ -1,0 +1,11 @@
+<div fxLayout="row" fxLayoutAlign="start stretch">
+  <div fxLayout="column" fxLayoutAlign="start stretch">
+    <h4 class="remove-margin">Do you want to delete this item?</h4>
+    <div fxLayout="row" class="white-bg round" fxLayoutAlign="space-between" fxLayoutGap=".5em" class="margin-top-1em">
+      <button fxFlex="48" [mat-dialog-close]="false" class="rounded-button white-color black-bg"
+        mat-raised-button>No</button>
+      <button fxFlex="48" [mat-dialog-close]="true" class="rounded-button white-color red-bg"
+        mat-raised-button>Yes</button>
+    </div>
+  </div>
+</div>
